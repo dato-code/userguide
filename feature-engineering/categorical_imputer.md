@@ -1,3 +1,4 @@
+#Categorical Imputer
 Impute missing categorical values using reference features.
 
 The imputer takes as an input a column which contains categorical values, and may contain
