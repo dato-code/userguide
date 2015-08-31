@@ -1,8 +1,6 @@
 # Monitoring Jobs
 
-Jobs are designed to be asynchronous objects. Once they are created (using the
-`create()` function), you can manage their execution status using the
-`get_status()` and `cancel()` methods.
+Jobs are designed to be asynchronous objects. Once they are created (using the `create()` function), you can manage their execution status using the `get_status()` and `cancel()` methods.
 
 ##### Status
 
@@ -15,9 +13,7 @@ job.get_status()
 'Running'
 ```
 
-[job.get_status()](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_status.html)
-will return one of the following messages: 'Pending', 'Running', 'Completed',
-'Failed', 'Unknown', 'Canceled'.
+[``job.get_status()``](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_status.html) will return one of the following messages: 'Pending', 'Running', 'Completed', 'Failed', 'Unknown', 'Canceled'.
 
 ##### Start and End time
 
@@ -39,8 +35,8 @@ job.get_end_time()
 datetime.datetime(2015, 5, 8, 14, 47, 55)
 ```
 
-Both [job.get_start_time()](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_start_time.html)
-and [job.get_end_time()](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_end_time.html)
+Both [``job.get_start_time()``](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_start_time.html)
+and [``job.get_end_time()``](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_end_time.html)
 return a Python [DateTime](https://docs.python.org/2/library/datetime.html) object.
 
 ##### Metrics
@@ -64,9 +60,7 @@ print job.get_metrics()
 +-------------------+---------------------+
 [1 rows x 7 columns]
 ```
-The metrics [SFrame](https://dato.com/products/create/docs/generated/graphlab.SFrame.html)
-contains the status, start time, and run time of each execution. We can also
-find out the exception type, message, and traceback if the execution fails.
+The metrics [SFrame](https://dato.com/products/create/docs/generated/graphlab.SFrame.html) contains the status, start time, and run time of each execution. We can also find out the exception type, message, and traceback if the execution fails.
 
 Another way to retrieve more details about job execution errors in Hadoop is ``job.get_error()``:
 
@@ -80,7 +74,7 @@ job.get_error()
 ##### Logs
 
 To get the log file path for this execution, simply call
-[job.get_log_file_path()](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_log_file_path.html). This works for both EC2 (S3 path) and Hadoop (HDFS path).
+[``job.get_log_file_path()``](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_log_file_path.html). This works for both EC2 (S3 path) and Hadoop (HDFS path).
 
 ```python
 job.get_log_file_path()
@@ -92,7 +86,7 @@ job.get_log_file_path()
 ##### Cancel
 
 You can cancel a job by calling
-[job.cancel()](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.cancel.html).
+[``job.cancel()``](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.cancel.html).
 
 ```python
 job.cancel()
@@ -102,12 +96,11 @@ job.cancel()
 
 To get results of a job execution, we can use [``job.get_results()``](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_results.html).
 
-For distributed jobs, we can use [``job.get_map_results()``](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_map_results.html) to get the result of each execution. If the distributed job has a combiner function, we can obtain the
-combiner function result from [job.get_results()](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_results.html).
+For distributed jobs, we can use [``job.get_map_results()``](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_map_results.html) to get the result of each execution. If the distributed job has a combiner function, we can obtain the combiner function result from [job.get_results()](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.get_results.html).
 
 ##### Visualize Job
 
-To visualize a Job, call [show()](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.show.html) method:
+To visualize a Job, call [``show()``](https://dato.com/products/create/docs/generated/graphlab.deploy.Job.show.html) method:
 
 ```
 job.show()

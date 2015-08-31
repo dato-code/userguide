@@ -84,8 +84,7 @@ Note that we omitted the environment parameter, since LocalAsync is the default 
 
 ##### EC2
 
-Next, let's run our job on EC2. When running on EC2, a cluster defines the EC2 instance to be launched, and is passed to the job for remote execution. After the job is completed and an additional timeout has passed the EC2
-instance is terminated. While executing, the job can be monitored with the Job APIs. Execution logs will be stored in S3 according to the location specified in the cluster.
+Next, let's run our job on EC2. When running on EC2, a cluster defines the EC2 instance to be launched, and is passed to the job for remote execution. After the job is completed and an additional timeout has passed the EC2 instance is terminated. While executing, the job can be monitored with the Job APIs. Execution logs will be stored in S3 according to the location specified in the cluster.
 
 **Note**: In order to run in EC2, remember to update the `aws_access_key`, `aws_secret_key`, and `s3_path` in the code below.
 
@@ -100,8 +99,8 @@ ec2 = gl.deploy.ec2_cluster.create(name='ec2',
                                    ec2_config=ec2config)
 
 job_ec2 = gl.deploy.job.create(my_workflow,
-        environment=ec2,
-        path='https://s3.amazonaws.com/dato-datasets/movie_ratings/sample.large')
+    environment=ec2,
+    path='https://s3.amazonaws.com/dato-datasets/movie_ratings/sample.large')
 
 # get the results
 job_ec2.get_results()
