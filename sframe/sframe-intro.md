@@ -34,7 +34,7 @@ Reference](https://dato.com/products/create/docs/generated/graphlab.SFrame.read_
 Once done we can inspect the first few rows of the tables we've imported.
 
 ```python
-songs
+songs.dtype
 ```
 
 ```
