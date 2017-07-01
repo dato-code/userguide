@@ -8,7 +8,7 @@ bin that contains that value.
 
 FeatureBinner supports both logarithmic and quantile binning strategies.
 If the strategy is logarithmic, num_bins is a parameter passed to the 
-constructor and bin break points are defined by by 10*i for i in [0,...,num_bins]. 
+constructor and bin break points are defined by 10*i for i in [0,...,num_bins]. 
 For instance, if num_bins = 2, the bins become (-Inf, 1], (1, Inf]. If 
 num_bins = 3, the bins become (-Inf, 1], (1, 10], (10, Inf].
 If the strategy is quantile, the bin breaks are defined by the 
